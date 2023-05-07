@@ -1,0 +1,8 @@
+<mat-form-field *ngFor="let option of searchOptionGroup.options" [ngStyle]="option.ngStyle">
+  <mat-label>{{option.display}}</mat-label>
+  <input #searchInput matInput
+         (click)="$event.stopPropagation()"
+         [value]="option.value || ''"
+         (keydown.enter)="commit(option, searchInput.value)"/>
+</mat-form-field>
+

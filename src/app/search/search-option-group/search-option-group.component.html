@@ -1,0 +1,27 @@
+<style>
+  .group-header{
+    margin-left: 12px;
+    font-size: 18px;
+  }
+</style>
+<span class="group-header">{{searchOptionGroup.display}}</span>
+<mat-divider></mat-divider>
+<ng-content></ng-content>
+<ng-container *ngIf="searchOptionGroup.style === 'multi-select'">
+  <app-search-option-multi-selection-group
+    [(searchOptionGroup)]="searchOptionGroup"
+    (searchOptionGroupChange)="searchOptionGroupChange.emit($event)"
+    [filterText]="filterText"></app-search-option-multi-selection-group>
+</ng-container>
+<ng-container *ngIf="searchOptionGroup.style === 'single-select'">
+  <app-search-option-single-selection-group
+    [(searchOptionGroup)]="searchOptionGroup"
+    (searchOptionGroupChange)="searchOptionGroupChange.emit($event)"
+    [filterText]="filterText"></app-search-option-single-selection-group>
+</ng-container>
+<ng-container *ngIf="searchOptionGroup.style === 'single-input'">
+  <app-search-option-single-input-group
+    [(searchOptionGroup)]="searchOptionGroup"
+    (searchOptionGroupChange)="searchOptionGroupChange.emit($event)"
+    [filterText]="filterText"></app-search-option-single-input-group>
+</ng-container>

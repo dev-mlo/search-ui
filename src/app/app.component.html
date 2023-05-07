@@ -1,0 +1,17 @@
+<style>
+  .space{
+    margin-top: 32px;
+    margin-left: 32px;
+    display: block;
+  }
+</style>
+
+<app-search
+  class="space"
+  [(searchConfig)]="config"
+  (search)="search($event)"
+></app-search>
+
+<div>
+  {{requestParams}}
+</div>

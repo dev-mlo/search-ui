@@ -1,0 +1,9 @@
+<mat-selection-list>
+  <mat-list-option
+    #sel
+    (click)="$event.stopPropagation(); commit(option, sel.selected);"
+    *ngFor="let option of filterOptions()"
+    [selected]="option.value">
+    {{option.display}}
+  </mat-list-option>
+</mat-selection-list>
